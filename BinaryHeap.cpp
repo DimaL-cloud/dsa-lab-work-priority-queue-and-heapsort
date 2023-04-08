@@ -67,7 +67,7 @@ int BinaryHeap::size() {
 }
 
 bool BinaryHeap::empty() {
-    return elements.size() == 0;
+    return elements.empty();
 }
 
 void BinaryHeap::clean() {
