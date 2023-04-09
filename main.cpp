@@ -10,7 +10,8 @@ using namespace std;
 
 using namespace std;
 
-void print(PriorityQueue priorityQueue) {
+template <typename T>
+void printPriorityQueue(PriorityQueue<T> priorityQueue) {
     while (!priorityQueue.empty()) {
         cout << priorityQueue.top() << endl;
         priorityQueue.pop();
@@ -20,7 +21,8 @@ void print(PriorityQueue priorityQueue) {
 int main() {
     srand(time(nullptr));
 
-    priorityQueueTest::testPriorityQueue();
+    PriorityQueueTest priorityQueueTest;
+    priorityQueueTest.testPriorityQueue();
 
 //    PriorityQueue priorityQueue;
 //
@@ -33,7 +35,7 @@ int main() {
 //    priorityQueue.push(Assignment(HIGH, HIGH, MEDIUM));
 //    priorityQueue.push(Assignment(HIGH, HIGH, MEDIUM));
 //
-//    print(priorityQueue);
+//    printPriorityQueue(priorityQueue);
 
 //    priorityQueue.pop();
 //    priorityQueue.pop();

@@ -10,12 +10,12 @@
 
 using namespace std;
 
-struct priorityQueueTest {
+struct PriorityQueueTest {
 public:
-    template <typename T>
-    static float testPriorityQueueSpeed(T&& priorityQueue);
+    template<typename T>
+    float testPriorityQueueSpeed(T&& priorityQueue);
 
-    static bool testPriorityQueue();
+    bool testPriorityQueue();
 };
 
 

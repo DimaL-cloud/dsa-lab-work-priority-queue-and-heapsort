@@ -3,4 +3,4 @@ project(Lab3)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Lab3 main.cpp Assignment.cpp BinaryHeap.cpp PriorityQueue.cpp PriorityQueueTest.cpp)
+add_executable(Lab3 main.cpp Assignment.cpp PriorityQueueTest.cpp HeapSort.cpp)

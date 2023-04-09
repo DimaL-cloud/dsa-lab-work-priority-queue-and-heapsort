@@ -4,14 +4,15 @@
 #include "binaryHeap.h"
 #include "assignment.h"
 
+template <typename T>
 struct PriorityQueue {
 private:
-    BinaryHeap binaryHeap;
+    BinaryHeap<T> binaryHeap;
 
 public:
-    void push(Assignment assignment);
+    void push(const T &element);
 
-    Assignment top();
+    const T &top();
 
     void pop();
 
@@ -21,5 +22,35 @@ public:
 
     void clean();
 };
+
+template <typename T>
+void PriorityQueue<T>::push(const T &element) {
+    binaryHeap.addElement(element);
+}
+
+template <typename T>
+const T &PriorityQueue<T>::top() {
+    return binaryHeap.getRoot();
+}
+
+template <typename T>
+void PriorityQueue<T>::pop() {
+    binaryHeap.removeRoot();
+}
+
+template <typename T>
+int PriorityQueue<T>::size() {
+    return binaryHeap.size();
+}
+
+template <typename T>
+bool PriorityQueue<T>::empty() {
+    return binaryHeap.empty();
+}
+
+template <typename T>
+void PriorityQueue<T>::clean() {
+    binaryHeap.clean();
+}
 
 #endif //LAB3_PRIORITYQUEUE_H

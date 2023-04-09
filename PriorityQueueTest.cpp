@@ -1,7 +1,7 @@
 #include "headers/priorityQueueTest.h"
 
 template<typename T>
-float priorityQueueTest::testPriorityQueueSpeed(T &&priorityQueue) {
+float PriorityQueueTest::testPriorityQueueSpeed(T &&priorityQueue) {
     const int iters = 100000;
 
     clock_t timeStart = clock();
@@ -22,12 +22,12 @@ float priorityQueueTest::testPriorityQueueSpeed(T &&priorityQueue) {
     return time;
 }
 
-bool priorityQueueTest::testPriorityQueue() {
+bool PriorityQueueTest::testPriorityQueue() {
     srand(time(NULL));
 
     const int iters = 20000;
 
-    PriorityQueue myPriorQueue;
+    PriorityQueue<Assignment> myPriorQueue;
     priority_queue<Assignment> stlPriorQueue;
 
     bool isDataEqual = true;
@@ -60,7 +60,7 @@ bool priorityQueueTest::testPriorityQueue() {
     int stlQueueSize = stlPriorQueue.size();
 
     float stlTime = testPriorityQueueSpeed<priority_queue<Assignment>>(priority_queue<Assignment>());
-    float myTime = testPriorityQueueSpeed<PriorityQueue>(PriorityQueue());
+    float myTime = testPriorityQueueSpeed<PriorityQueue<Assignment>>(PriorityQueue<Assignment>());
 
     cout << "My PriorityQueue:" << endl;
     cout << "Time: " << myTime << ", size: " << myQueueSize << endl;
