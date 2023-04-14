@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "assignment.h"
+#include "../entities/assignment.h"
 
 using namespace std;
 
@@ -31,10 +31,9 @@ public:
 
     void clean();
 
-private:
     void siftUp(int index);
 
-    void siftDown(int index);
+    void siftDown(vector<T> &array, int index, int heapSize);
 };
 
 template<typename T>
@@ -50,7 +49,7 @@ const T &BinaryHeap<T>::getRoot() {
         throw range_error("No nodes in binary heap");
     }
 
-    return elements[0];
+    return elements.front();
 }
 
 template<typename T>
@@ -62,7 +61,7 @@ void BinaryHeap<T>::removeRoot() {
     swap(elements[0], elements[elements.size() - 1]);
     elements.pop_back();
 
-    siftDown(0);
+    siftDown(elements, 0, elements.size());
 }
 
 template<typename T>
@@ -91,19 +90,19 @@ void BinaryHeap<T>::siftUp(int index) {
 }
 
 template<typename T>
-void BinaryHeap<T>::siftDown(int index) {
+void BinaryHeap<T>::siftDown(vector<T> &array, int index, int heapSize) {
     int leftChildIndex = getLeftChild(index);
     int rightChildIndex = getRightChild(index);
 
     int maxChildIndex;
 
-    if (rightChildIndex >= elements.size() || elements[leftChildIndex] > elements[rightChildIndex]) {
+    if (rightChildIndex >= heapSize || array[leftChildIndex] > array[rightChildIndex]) {
         maxChildIndex = leftChildIndex;
     } else maxChildIndex = rightChildIndex;
 
-    if (maxChildIndex < elements.size() && elements[index] < elements[maxChildIndex]) {
-        swap(elements[maxChildIndex], elements[index]);
-        siftDown(maxChildIndex);
+    if (maxChildIndex < heapSize && array[index] < array[maxChildIndex]) {
+        swap(array[maxChildIndex], array[index]);
+        siftDown(array, maxChildIndex, heapSize);
     }
 }
 
@@ -121,5 +120,6 @@ template<typename T>
 void BinaryHeap<T>::clean() {
     elements.clear();
 }
+
 
 #endif //LAB3_BINARYHEAP_H

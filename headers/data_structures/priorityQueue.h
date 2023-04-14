@@ -2,7 +2,7 @@
 #define LAB3_PRIORITYQUEUE_H
 
 #include "binaryHeap.h"
-#include "assignment.h"
+#include "../entities/assignment.h"
 
 template <typename T>
 struct PriorityQueue {

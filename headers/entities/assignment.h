@@ -3,7 +3,7 @@
 
 #include <ostream>
 
-#include "enums/evaluation.h"
+#include "../enums/evaluation.h"
 
 using namespace std;
 

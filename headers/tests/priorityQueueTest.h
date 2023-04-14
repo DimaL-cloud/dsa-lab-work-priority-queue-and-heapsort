@@ -5,17 +5,17 @@
 #include <ctime>
 #include <iostream>
 
-#include "priorityQueue.h"
-#include "assignment.h"
+#include "../data_structures/priorityQueue.h"
+#include "../entities/assignment.h"
 
 using namespace std;
 
 struct PriorityQueueTest {
 public:
     template<typename T>
-    float testPriorityQueueSpeed(T&& priorityQueue);
+    static float testPriorityQueueSpeed(T&& priorityQueue);
 
-    bool testPriorityQueue();
+    static bool testPriorityQueue();
 };
 
 

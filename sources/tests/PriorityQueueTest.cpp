@@ -1,4 +1,4 @@
-#include "headers/priorityQueueTest.h"
+#include "../../headers/tests/priorityQueueTest.h"
 
 template<typename T>
 float PriorityQueueTest::testPriorityQueueSpeed(T &&priorityQueue) {

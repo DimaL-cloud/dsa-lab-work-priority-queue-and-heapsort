@@ -1,4 +1,4 @@
-#include "headers/assignment.h"
+#include "../../headers/entities/assignment.h"
 
 Assignment::Assignment() {
     interest = Evaluation(1 + rand() % 3);
